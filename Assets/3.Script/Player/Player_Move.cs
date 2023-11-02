@@ -23,22 +23,22 @@ public class Player_Move : MonoBehaviour
         {
             Turn(movement);
 
-            if (Input.GetKey(KeyCode.LeftShift))
+            if (Input.GetKey(KeyCode.LeftShift)&& !Input.GetMouseButton(1))
             {
                 animator.SetBool("isRun", true);
                 transform.position += movement * speed*2f * Time.deltaTime;
             }
-            else if(!Input.GetKey(KeyCode.LeftShift))
+            else if(!Input.GetKey(KeyCode.LeftShift)|| Input.GetMouseButton(1))
             {
                 animator.SetBool("isRun", false);
-                animator.SetBool("isWalik", true);
+                animator.SetBool("isWalk", true);
                 transform.position += movement * speed * Time.deltaTime;
             }
         }
         else if (moveHorizontal == 0 && moveVertical == 0)
         {
             animator.SetBool("isRun", false);
-            animator.SetBool("isWalik", false);
+            animator.SetBool("isWalk", false);
             
         }
 
