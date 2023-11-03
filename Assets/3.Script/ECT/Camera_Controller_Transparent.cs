@@ -33,7 +33,7 @@ public class Camera_Controller_Transparent : MonoBehaviour
 
                         if (fader != null)
                         {
-                            fader.isDoFade = false;
+                            //fader.isDoFade = false;
                             Debug.Log("House");
                         }
                     }
@@ -41,7 +41,7 @@ public class Camera_Controller_Transparent : MonoBehaviour
                     {
                         if (fader == null)
                         {
-                            fader.isDoFade = true;
+                            //fader.isDoFade = true;
                         }
                     }
 
