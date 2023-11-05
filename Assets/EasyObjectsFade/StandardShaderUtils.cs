@@ -35,9 +35,9 @@ public static class StandardShaderUtils
     {
         if (material == null)
             throw new ArgumentNullException("material");
-        bool alphaClip = material.GetFloat("_AlphaClip") == 1;
+     /*   bool alphaClip = material.GetFloat("_AlphaClip") == 1;
         if (alphaClip)
-            material.EnableKeyword("_ALPHATEST_ON");
+            material.EnableKeyword("_ALPHATEST_ON");*/  //안 쓰는 부분 주석 처리 
         else
             material.DisableKeyword("_ALPHATEST_ON");
         SurfaceType surfaceType = (SurfaceType)material.GetFloat("_Surface");

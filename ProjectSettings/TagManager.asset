@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Zombie
   - House
+  - Window
   layers:
   - Default
   - TransparentFX
