@@ -5,11 +5,11 @@ using UnityEngine;
 public class Player_Move : MonoBehaviour
 {
     [Header("걷기속도 (달리기는*2임)")]
-    public float speed = 3f;
+    public float speed = 1.5f;
+    [Header("자동으로 들어감")]
     public Animator animator;
 
-    [Header("메인카메라")]
-    [SerializeField] private Camera followCamera;
+
 
     [Header("발소리(사운드클립)")]
     public AudioClip FootSteps;
@@ -68,7 +68,7 @@ public class Player_Move : MonoBehaviour
         else if (movement != Vector3.zero) // 마우스를 바라보지 않는 상황에서 이동 중이라면
         {
             Quaternion toRotation = Quaternion.LookRotation(movement, Vector3.up);
-            transform.rotation = Quaternion.Lerp(transform.rotation, toRotation, speed * Time.deltaTime);
+            transform.rotation = Quaternion.Lerp(transform.rotation, toRotation, speed*3f * Time.deltaTime);
         }
 
 
@@ -155,10 +155,6 @@ public class Player_Move : MonoBehaviour
     }
 
 
-    private void Die()
-    {
-        audioSource.PlayOneShot(Death);
-    }
 
 
 
