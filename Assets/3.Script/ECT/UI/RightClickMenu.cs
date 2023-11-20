@@ -16,7 +16,7 @@ public class RightClickMenu : MonoBehaviour, IPointerClickHandler, IClickState
     private int buttonCount = 0;
     private RaycastHit hitObject;
 
-    private bool isAim = false; // player 조준이 아닐 때
+    public bool isAim = false; // player 조준이 아닐 때
 
     private void Awake()
     {
