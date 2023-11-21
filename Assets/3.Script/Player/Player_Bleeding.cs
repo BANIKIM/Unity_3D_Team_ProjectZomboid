@@ -25,17 +25,13 @@ public class Player_Bleeding : MonoBehaviour
     {
         for (int i = 0; i < hit_part.Length; i++)//엑티브 되었는지 확인하고 이제는 Point를 확인한다.
         {
-            if (hitColl.BodyDmg[i].activeSelf == true) //상처파트를 엑티브한다.
+            if (hitColl.BodyDmg[i].activeSelf == true) //hitColl.BodyDmg가 활성화가 되어 있다면
             {
                 hit_part[i] = true;
             }            
         }
-
         //이제 붕대를 감으면 데미지를 주지 않은 것을 만들자.
         StartCoroutine(player_Bleeding_co());
-       
-
-
     }
 
 
@@ -46,21 +42,16 @@ public class Player_Bleeding : MonoBehaviour
             // hit_part[i]==true가 트루고 벤딩이 false가 되어있다면
             if (hit_part[i] == true && !Point[i].isBanding)
             {
-                statusController.DecreaseHP(0.05f);//데미지를 1준다.
-                hitColl.Bleeding.SetActive(true);
+                statusController.DecreaseHP(0.05f);//데미지를 0.05준다.
+                hitColl.Bleeding.SetActive(true);//아이콘을 활성화
             }
             else if(hit_part[i] == true && Point[i].isBanding)
             {
-                hitColl.Bleeding.SetActive(false);
-            }
-            
+                hitColl.Bleeding.SetActive(false);//아이콘을 끈다
+            }          
         }
-
-
         yield return null;
     }
-
-
     //필요하다 해당 부위에 대한 붕대질을 했을 때 출혈에 대한 bool 값을 꺼줄 방법이...
     //HitColl에서 값을 가지고 와서 비활성화 시킬려고 했는데 계속 랜덤값이라 문제가 생길거같다..
     //해당 포인트에 is벤딩이 트루가 된다면 그 값을 트루하면 될꺼같은데??맞을까??
