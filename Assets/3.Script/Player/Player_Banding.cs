@@ -7,7 +7,7 @@ public class Player_Banding : MonoBehaviour, IPointerClickHandler//우클릭 마우스
 {
     [SerializeField] private GameObject Band;
     [SerializeField] private Player_Move player;
-    private bool isBanding = false;
+    public bool isBanding = false;
 
 
 

@@ -11,7 +11,7 @@ public class SaveData
     public Vector3 zombiePos;
     public Vector3 zombieRot;
 
-    public int savedHp;
+    public float savedHp;
     public int savedSp;
     public int savedDp;
     public int saveAtt;

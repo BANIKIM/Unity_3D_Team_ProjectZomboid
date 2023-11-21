@@ -1592,6 +1592,7 @@ GameObject:
   - component: {fileID: 7320185721629766081}
   - component: {fileID: 7320185721629766080}
   - component: {fileID: 7320185721629766083}
+  - component: {fileID: 8440794052614800649}
   m_Layer: 0
   m_Name: Player_Hit
   m_TagString: Player
@@ -1764,6 +1765,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8440794052614800649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7320185721629765950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91fdd72b8b6e8ae429223518dc5d48d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitColl: {fileID: 7320185721629766081}
+  Point: []
+  statusController: {fileID: 0}
 --- !u!1 &7320185722164172898
 GameObject:
   m_ObjectHideFlags: 0
@@ -1882,7 +1898,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 5.47e-43, y: 56.65982, z: 5.47e-43, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: -32.487762}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -5238,7 +5254,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   animator: {fileID: 0}
-  followCamera: {fileID: 0}
   FootSteps: {fileID: 8300000, guid: d0c40ccbf54da4940bdf32dd39904055, type: 3}
   RunSteps: {fileID: 8300000, guid: a0886263a16fac449ba1fa6d4e0cafcf, type: 3}
   Death: {fileID: 8300000, guid: bde3dfc74f065c948a74d23e709da96f, type: 3}
@@ -5271,6 +5286,7 @@ MonoBehaviour:
   Bat_Get: 0
   Melee_weapon: 0
   Range_weapon: 0
+  rightClickMenu: {fileID: 0}
 --- !u!82 &8573058534505336058
 AudioSource:
   m_ObjectHideFlags: 0

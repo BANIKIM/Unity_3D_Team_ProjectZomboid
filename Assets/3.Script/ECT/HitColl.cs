@@ -40,10 +40,8 @@ public class HitColl : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         player = GetComponentInParent<Player_Attack>();
         hp = GetComponentInParent<HP>();
-        Player_HP=hp.Start_HP(Player_HP);
-        
+        Player_HP=hp.Start_HP(Player_HP);        
         player_Fog = GetComponentInParent<Player_Fog>();
-
     }
 
     private void Update()
@@ -96,7 +94,7 @@ public class HitColl : MonoBehaviour
         Instantiate(hit, Hit_pos.transform.position, Hit_pos.transform.rotation);
         player.anim.SetTrigger("isHit");
         audioSource.PlayOneShot(Hit_Sound);
-        health = statusController.DecreaseHP(10);
+        health = statusController.DecreaseHP(5f);
      
         bodyDmg();
         yield return new WaitForSeconds(1f);
@@ -106,7 +104,6 @@ public class HitColl : MonoBehaviour
     private void bodyDmg()
     {
         int a = Random.Range(0, BodyDmg.Length);
-        Bleeding.SetActive(true);
         BodyDmg[a].SetActive(true);
         Bandage_Point[a].SetActive(true);
     }

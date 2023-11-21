@@ -8,7 +8,7 @@ public class StatusController : MonoBehaviour
     // 체력
     [SerializeField]
     private int hp;  // 최대 체력. 유니티 에디터 슬롯에서 지정할 것.
-    private int currentHp;
+    private float currentHp;
 
     // 스태미나
     [SerializeField]
@@ -72,13 +72,13 @@ public class StatusController : MonoBehaviour
 
 
     //제이슨 저장 불러오기용 스탯 
-    public int GetcurrentHP() { return currentHp; }
+    public float GetcurrentHP() { return currentHp; }
     public int GetcurrentDP() { return currentDp; }
     public int GetcurrentSP() { return currentSp; }
     public int GetcurrentAtt() { return currentAtt; }
     public int GetcurrentHungry() { return currentHungry;}
     public int GetcurrentThirsty() { return currentThirsty; }
-    public void SetcurrentHP(int LoadHp)
+    public void SetcurrentHP(float LoadHp)
     {
         currentHp = LoadHp;
     }
@@ -137,7 +137,7 @@ public class StatusController : MonoBehaviour
         }
 
     }
-    public bool DecreaseHP(int _count)
+    public bool DecreaseHP(float _count)
     {
        
         currentHp -= _count;
